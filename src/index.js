@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import CardList from './CardList.jsx'
 import App from './App.jsx'
 import reportWebVitals from './reportWebVitals';
 
