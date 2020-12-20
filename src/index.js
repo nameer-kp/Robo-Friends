@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
 import App from './containers/App.jsx'
 import reportWebVitals from './reportWebVitals';
+import {searchRobot} from './reducers'
 
-
+const store = createStore(searchRobot)
 ReactDOM.render(
-  <App/>
+  <Provider store={store}>
+    <App/>
+  </Provider>
+  
   ,document.getElementById('root')
 );
 
