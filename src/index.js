@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
-import App from './containers/App.jsx'
+import {createStore,applyMiddleware} from 'redux';
+import App from './containers/App.jsx';
+import {createLogger} from 'redux-logger'
 import reportWebVitals from './reportWebVitals';
 import {searchRobot} from './reducers'
 
-const store = createStore(searchRobot)
+const logger = createLogger();
+const store = createStore(searchRobot,applyMiddleware(logger));
 ReactDOM.render(
   <Provider store={store}>
     <App/>
